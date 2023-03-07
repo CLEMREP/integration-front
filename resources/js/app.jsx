@@ -1,4 +1,3 @@
-import './bootstrap';
 import '../css/app.css';
 
 import { createRoot } from 'react-dom/client';
@@ -9,7 +8,7 @@ const appName = window.document.getElementsByTagName('title')[0]?.innerText || '
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./Pages/${name}.jsx`, import.meta.glob('./Pages/**/*.jsx')),
+    resolve: (name) => resolvePageComponent(`./pages/${name}.js`, import.meta.glob('./pages/**/*.js')),
     setup({ el, App, props }) {
         const root = createRoot(el);
 
